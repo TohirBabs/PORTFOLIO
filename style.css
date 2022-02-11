@@ -5,7 +5,13 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     font-family: monospace;
+    background-color: black;
+    color: white;
 }
 
 .h1,h2{
@@ -26,21 +32,44 @@ a:hover,
     cursor: pointer;
 }
 
+img{
+    max-width: 100vw;
+}
+
 header{
-    position: absolute;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3rem;
+    overflow: hidden;
+    box-shadow: 0rem 0.1rem 0.8rem rgb(109, 107, 107);
+    z-index: 100;
+}
+
+.header--scroll{
+    background-color: grey;
+    border-radius: 5rem;
+
+}
+
+.header{
     top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 96vw;
     padding: 1rem 2rem;
-    box-shadow: 0rem 0.1rem 0.8rem rgb(109, 107, 107);
-    background-color: white;
-    z-index: 100;
 }
 
 .title{
     font-size: 1.5rem;
+    color: tomato;
+}
+
+.title span{
+    color:black;
 }
 
 .nav-toggle{
@@ -61,17 +90,10 @@ header{
     position: absolute;
     left: 0;
     top: 0;
-}
-
-.show-nav::before{
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-    filter: blur(10px);
-    background: inherit;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    background-color:rgb(179, 179, 179);
+    z-index: 1000;
 }
 
 .nav-item{
@@ -83,6 +105,19 @@ header{
     color: black;
 }
 
+.scroll-bar{
+    top: 57px;
+    height: 3px;
+    background-color: aquamarine;
+    z-index: 1000;
+}
+
+.scroll-progress{
+    width: 0;
+    height: inherit;
+    background-color: tomato;
+}
+
 .hero::before{
     content: '';
     display: block;
@@ -92,10 +127,11 @@ header{
     width: 100vw;
     height: 95vh;
     opacity: 0.6;
-    background-image: url('dev_jnr.jpg');
+    border-radius: 0 0  2% 20%;
+    background-image: url('me1.jpg');
     background-repeat: no-repeat;
     background-position: 50% 0;
-    background-size: cover;
+    background-size: 190%;
     z-index: -1;
 }
 
@@ -118,13 +154,21 @@ header{
     justify-content: center;
     align-items: center;
     font-size: 1rem;
+    margin-bottom: 7rem;
 }
 
 .profession{
     padding: 1rem 0;
 }
 
+.job{
+    font-size: 1.4rem;
+    font-family: cursive;
+    color:royalblue;
+}
+
 .name{
+    padding: 0 1rem;
     font-size: 3rem;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
 }
