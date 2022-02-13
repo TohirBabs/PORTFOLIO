@@ -22,13 +22,28 @@ ul{
     list-style: none;
 }
 
+img{
+    display: block;
+}
+
+button{
+    border: none;
+}
+
 a{
     text-decoration: none;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 a:hover,
 .name:hover,
-.nav-toggle:hover{
+.nav-toggle:hover,
+.title:hover{
     cursor: pointer;
 }
 
@@ -42,15 +57,15 @@ header{
     flex-direction: column;
     justify-content: center;
     border-radius: 3rem;
-    overflow: hidden;
-    box-shadow: 0rem 0.1rem 0.8rem rgb(109, 107, 107);
-    z-index: 100;
+    box-shadow: 0rem 0.5rem 0.8rem black;
+    z-index: 10;
+    margin-top: 10px;
 }
 
 .header--scroll{
     background-color: grey;
     border-radius: 5rem;
-
+    overflow: hidden;
 }
 
 .header{
@@ -60,30 +75,27 @@ header{
     align-items: center;
     justify-content: space-between;
     width: 96vw;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
 }
 
 .title{
-    font-size: 1.5rem;
-    color: tomato;
+    font-size: 1.3rem;
+    color: rgb(42, 69, 148);
 }
 
-.title span{
-    color:black;
+.title-name{
+    font-family: 'Lucida Sans';
+    color:tomato;
+    font-weight: 100;
 }
 
 .nav-toggle{
     font-size: 1.5rem;
+    color: rgb(17, 42, 119);
 }
 
 .nav-list{
     display: none;
-    
-    transition: ease-in 700ms;
-}
-
-.show-nav{
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 38vh 2.7rem;
@@ -94,6 +106,38 @@ header{
     border-radius: 0 10px 10px 0;
     background-color:rgb(179, 179, 179);
     z-index: 1000;
+}
+
+.hide-nav{
+    display: flex;
+    transform: translateX(-110%);
+    animation: slide-in 500ms;
+}
+
+.show-nav{
+    display: flex;
+    transform: translateX(0%);
+    animation: slide-out 500ms;
+}
+
+@keyframes slide-out {
+    0%{
+        transform: translateX(-100%);
+
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in {
+    0%{
+        transform: translateX(0%);
+
+    }
+    100%{
+        transform: translateX(-110%);
+    }
 }
 
 .nav-item{
@@ -115,7 +159,7 @@ header{
 .scroll-progress{
     width: 0;
     height: inherit;
-    background-color: tomato;
+    background-color: royalblue;
 }
 
 .hero::before{
@@ -126,7 +170,7 @@ header{
     top: 0;
     width: 100vw;
     height: 95vh;
-    opacity: 0.6;
+    opacity: 0.4;
     border-radius: 0 0  2% 20%;
     background-image: url('me1.jpg');
     background-repeat: no-repeat;
@@ -136,7 +180,7 @@ header{
 }
 
 .hero::after{
-
+    
 }
 
 .hero{
@@ -149,6 +193,7 @@ header{
 }
 
 .hero-content{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,4 +216,116 @@ header{
     padding: 0 1rem;
     font-size: 3rem;
     letter-spacing: 0.3rem;
+}
+
+.chat{
+    position: absolute;
+    bottom: 3.5rem;
+    right: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(115, 228, 115);
+    color: white;
+    font-family: monospace;
+    padding: 0.7rem;
+    border-radius: 15px;
+}
+
+.chat i{
+    padding: 5px;
+}
+
+section{
+    margin: 1rem 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin: 3rem 0;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 2px royalblue solid;
+}
+
+.section-title{
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-display{
+    position: relative;
+    width: 90vw;
+}
+
+.project-display img{
+    max-width: 90vw;
+}
+
+.project-display i{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.project-text{
+    background-color: white;
+    color: black;
+    padding: 1.5rem;
+}
+
+.project-title{
+    font-size: 1.7rem;
+}
+
+.project-about{
+    font-size: 1rem;
+    text-align: center;
+    padding-top: 1rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:1000px) {
+
+    .header--scroll{
+        border-radius: 0.5rem;
+    }
+
+    .header{
+        height: 1rem;
+        border-radius: 2px;
+    }
+
+    .title{
+        font-size: 1rem;
+    }
+
+    .nav-toggle{
+        font-size: 1rem;
+    }
+
+    .hero::before{
+        background-image: url('me5.jpg');
+        background-size: cover;
+        
+    }
 }
