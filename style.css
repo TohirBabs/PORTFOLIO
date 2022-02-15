@@ -14,7 +14,7 @@ body{
     color: white;
 }
 
-.h1,h2{
+h1,h2,img{
     display: inline-block;
 }
 
@@ -38,6 +38,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 5rem;
 }
 
 a:hover,
@@ -56,15 +57,14 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 3rem;
-    box-shadow: 0rem 0.5rem 0.8rem black;
+    box-shadow: 0rem 0.2rem 0.5rem black;
     z-index: 10;
     margin-top: 10px;
 }
 
 .header--scroll{
     background-color: grey;
-    border-radius: 5rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 
@@ -75,17 +75,29 @@ header{
     align-items: center;
     justify-content: space-between;
     width: 96vw;
-    padding: 0.8rem 2rem;
+    padding: 0.3rem 1rem;
+}
+
+.logo{
+    width: 40px;
+    border-radius: 50%;
 }
 
 .title{
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: rgb(42, 69, 148);
+    
+    padding: 0 5px;
+}
+
+.title-link{
+    display: flex;
+    align-items: center;
 }
 
 .title-name{
-    font-family: 'Lucida Sans';
-    color:tomato;
+    font-family: monospace;
+    color:black;
     font-weight: 100;
 }
 
@@ -98,11 +110,11 @@ header{
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    padding: 38vh 2.7rem;
+    padding: 35vh 2.7rem;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 97vh;
     border-radius: 0 10px 10px 0;
     background-color:rgb(179, 179, 179);
     z-index: 1000;
@@ -228,6 +240,7 @@ header{
     font-family: monospace;
     padding: 0.7rem;
     border-radius: 15px;
+    border: 2px white solid;
 }
 
 .chat i{
@@ -235,7 +248,7 @@ header{
 }
 
 section{
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .card{
@@ -244,7 +257,7 @@ section{
     align-items: center;
     justify-content: center;
     width: 90vw;
-    margin: 3rem 0;
+    margin: 2rem 0;
     border-radius: 2rem;
     overflow: hidden;
     border: 2px royalblue solid;
@@ -254,12 +267,14 @@ section{
     text-align: center;
     display: block;
     font-size: 2rem;
-    margin-bottom: 2rem;
+    padding: 5rem 0 1rem;
+    color: royalblue;
 }
 
 .project-display{
     position: relative;
     width: 90vw;
+    background-color: inherit;
 }
 
 .project-display img{
@@ -276,6 +291,29 @@ section{
     font-size: 2rem;
 }
 
+.tags{
+    position: absolute;
+    bottom: 1rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.tags span{
+    padding: 0.2rem;
+    color: white;
+    border-radius: 1rem;
+}
+
+.html{
+    background-color:tomato;
+}
+.css{
+    background-color:slateblue;
+}
+.js{
+    background-color:springgreen;
+}
+
 .project-text{
     background-color: white;
     color: black;
@@ -283,7 +321,7 @@ section{
 }
 
 .project-title{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .project-about{
@@ -291,6 +329,52 @@ section{
     text-align: center;
     padding-top: 1rem;
 
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.line{
+    height: 2px;
+    width: 90vw;
+    background-color: rgb(42, 69, 148);
+}
+
+.socials{
+    padding: 1rem;
+}
+
+.socials i{
+    font-size: 2rem;
+    padding: 0 1rem;
+    color: royalblue;
+}
+
+.about{
+    padding: 0 1.5rem;
+}
+
+.about-text{
+    font-size: 1.2rem;
+}
+
+.pending img{
+    opacity: 0.2;
+}
+
+.pending .project-display::before{
+    position: absolute;
+    content: "Coming Soon...";
+    color: royalblue;
+    top: 50%;
+    left: 22%;
+    font-size: 2rem;
 }
 
 
