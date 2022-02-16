@@ -301,7 +301,7 @@ section{
 .tags span{
     padding: 0.2rem;
     color: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 .html{
@@ -315,6 +315,7 @@ section{
 }
 
 .project-text{
+    width: 100%;
     background-color: white;
     color: black;
     padding: 1.5rem;
