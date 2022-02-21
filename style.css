@@ -8,10 +8,16 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    font-family: monospace;
     background-color: black;
     color: white;
+}
+
+.wrapper{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-family: monospace;
 }
 
 h1,h2,img{
@@ -57,7 +63,6 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0rem 0.2rem 0.5rem black;
     z-index: 10;
     margin-top: 10px;
 }
@@ -66,6 +71,7 @@ header{
     background-color: grey;
     border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: 0rem 0.2rem 0.5rem black;
 }
 
 .header{
@@ -389,15 +395,52 @@ footer{
 
 
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:750px) {
+
+    
+
+    body {
+        min-width: 100vw;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrapper,
+    .hero,
+    header,
+    section{
+        max-width: 900px;
+    }
 
     .header--scroll{
-        border-radius: 0.5rem;
+        max-width: 800px;
     }
 
     .header{
-        height: 1rem;
-        border-radius: 2px;
+        max-width: 780px;
+    }
+
+    .nav-list{
+        display: none;
+    }
+
+    .hero{
+        height: 400px;
+        margin: 0;
+
+    }
+
+    .hero::before{
+        background-image: url('header-img.jpg');
+        background-size: contain;
+        max-width: 900px;
+    }
+
+    .hero-content{
+        margin-bottom: 0;
     }
 
     .title{
@@ -408,9 +451,47 @@ footer{
         font-size: 1rem;
     }
 
-    .hero::before{
-        background-image: url('me5.jpg');
-        background-size: cover;
-        
+    .name{
+        letter-spacing: 0.5rem;
     }
+
+    .chat {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-title{
+        padding: 1.5rem;
+    }
+
+    .card-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 50px;
+    }
+
+    .card,
+    .project-display,
+    .project-img{
+        max-width: 400px !important;
+    }
+
+    .project-img{
+        width: 400px;
+        height: 220px;
+    }
+
+    .card{
+        min-height: 300px;
+        width: 400px;
+        margin: 0.5rem 0;
+    }
+
+
 }
