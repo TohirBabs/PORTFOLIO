@@ -329,6 +329,11 @@ section{
 
 .project-title{
     font-size: 1.5rem;
+    color: royalblue;
+}
+
+.project-title:hover{
+    cursor: pointer;
 }
 
 .project-about{
